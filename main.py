@@ -1,5 +1,5 @@
 from yt_dlp import YoutubeDL
-import requests
+import requests, time
 from tkinter import Tk, Label, Button, Text
 
 
@@ -9,6 +9,8 @@ def download(url):
     try:
       with YoutubeDL(ydl_opts) as ydl: ydl.download([url])
     except: print('Download Error')
+    else:
+      raise SystemExit('Download Complete')
 
 def button_start():
   value = txt.get(1.0, "end-1c")
