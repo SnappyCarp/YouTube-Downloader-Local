@@ -1,2 +1,2 @@
 @echo off
-python "main downloader.py"
+python "main.py"
