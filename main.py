@@ -1,5 +1,8 @@
-from yt_dlp import YoutubeDL
-import requests, time
+try:
+  from yt_dlp import YoutubeDL
+except ImportError:
+  raise SystemExit('YoutubeDL not installed')
+import requests
 from tkinter import Tk, Label, Button, Text
 
 
@@ -25,7 +28,7 @@ def main():
   root = Tk()
   root.title("YouTube Downloader")
   root.geometry('700x700')
-  lab = Label(root, text='Enter Video Url Here')
+  lab = Label(root, text='Enter Video Url Here ↓')
   btn = Button(root, command=button_start, text='Download')
   txt = Text(root, height = 5, width = 30)
   lab.pack()
